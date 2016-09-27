@@ -1,0 +1,34 @@
+/* Author: Stephen Stinson
+ * Date: 9/22/16
+ * Description: The implementation file for the header file.
+ */
+
+#include "ImageStacker.h";
+
+
+
+
+//Default constructor.
+ImageStacker::stacker(){
+  magic_number = "P3";
+  width = 0;
+  height = 0;
+  max_color = 255;
+
+  pixel.red = 0;
+  pixel.geen = 0;
+  pixel.blue = 0;
+}
+
+ImageStacker::loadFile(string file){
+  ifstream new_input(file.c_str());
+
+  input >> magic_number >> width >> height >> max_color;
+  for(int i = 0; i < width; i++)
+  {
+    for(int j = 0; j < height; j++)
+      {
+	pixel Pixel;
+	input >> Pixel.red >> Pixel.green >> Pixel.blue;
+      }
+  }
