@@ -27,8 +27,10 @@ class stacker{
   vector <pixel> pixels;//a Vector of pixel structs storing color info. for the image.
 public:
   stacker();
+  int get_total_pixels();
   void loadFile(string file);
-  // void  vector<pixel> push(pixel n);
+  void average(int imageNumber, vector<int> &averagered, vector<int> &averagegreen, vector<int> &averageblue);
+  void save( vector<int> &averagered, vector<int> &averagegreen, vector<int> &averageblue);
 
 };
 
